@@ -1,0 +1,198 @@
+@startuml
+set namespaceSeparator ::
+
+class "clash_log::clan.dart::Home" {
+  +State<Home> createState()
+}
+
+"flutter::src::widgets::framework.dart::StatefulWidget" <|-- "clash_log::clan.dart::Home"
+
+class "clash_log::clan.dart::_HomeScreen" {
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::State" <|-- "clash_log::clan.dart::_HomeScreen"
+
+class "clash_log::clan_class.dart::ClanMember" {
+  +String tag
+  +String name
+  +String role
+  +int expLevel
+  +String leagueName
+  +String leagueIcon
+  +int trophy
+  +int bbTrophy
+  +int verTrophy
+  +int clanRank
+  +int donation
+  +int donated
+  +int bbLeagueName
+}
+
+class "clash_log::clan_class.dart::Clan" {
+  +String tag
+  +String name
+  +String badgeUrl
+  +int level
+  +int point
+  +int bbPoint
+  +int verPoint
+  +int capitalPoint
+  +int warWins
+  +int warTies
+  +int warLosses
+  +String warLeague
+  +int members
+}
+
+class "clash_log::main.dart::Start" {
+  +State<Start> createState()
+}
+
+"flutter::src::widgets::framework.dart::StatefulWidget" <|-- "clash_log::main.dart::Start"
+
+class "clash_log::main.dart::_StartScreen" {
+  -GlobalKey<FormState> _clanTagKey
+  +bool acknowledge
+  -void _understood()
+  +Widget build()
+}
+
+"clash_log::main.dart::_StartScreen" o-- "flutter::src::widgets::framework.dart::GlobalKey<FormState>"
+"flutter::src::widgets::framework.dart::State" <|-- "clash_log::main.dart::_StartScreen"
+
+class "clash_log::member.dart::Member" {
+  +State<Member> createState()
+}
+
+"flutter::src::widgets::framework.dart::StatefulWidget" <|-- "clash_log::member.dart::Member"
+
+class "clash_log::member.dart::_MemberScreen" {
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::State" <|-- "clash_log::member.dart::_MemberScreen"
+
+class "clash_log::memberList.dart::memberList" {
+  +State<StatefulWidget> createState()
+}
+
+"flutter::src::widgets::framework.dart::StatefulWidget" <|-- "clash_log::memberList.dart::memberList"
+
+class "clash_log::memberList.dart::_memberList" {
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::State" <|-- "clash_log::memberList.dart::_memberList"
+
+class "clash_log::navigation.dart::Navigation" {
+  +State<StatefulWidget> createState()
+}
+
+"flutter::src::widgets::framework.dart::StatefulWidget" <|-- "clash_log::navigation.dart::Navigation"
+
+class "clash_log::navigation.dart::_Navigation" {
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::State" <|-- "clash_log::navigation.dart::_Navigation"
+
+class "clash_log::navigation.dart::NavBar" {
+  +State<StatefulWidget> createState()
+}
+
+"flutter::src::widgets::framework.dart::StatefulWidget" <|-- "clash_log::navigation.dart::NavBar"
+
+class "clash_log::navigation.dart::_NavBar" {
+  +int pageIndex
+  +List<StatefulWidget> pages
+  +Widget build()
+  +Container buildNavBar()
+}
+
+"flutter::src::widgets::framework.dart::State" <|-- "clash_log::navigation.dart::_NavBar"
+
+class "clash_log::shield_con_icons.dart::ShieldCon" {
+  {static} -String _kFontFam
+  {static} -String? _kFontPkg
+  {static} +IconData shield_alt
+}
+
+"clash_log::shield_con_icons.dart::ShieldCon" o-- "flutter::src::widgets::icon_data.dart::IconData"
+
+class "clash_log::sword_con_icons.dart::SwordCon" {
+  {static} -String _kFontFam
+  {static} -String? _kFontPkg
+  {static} +IconData broadsword
+  {static} +IconData shield_alt
+}
+
+"clash_log::sword_con_icons.dart::SwordCon" o-- "flutter::src::widgets::icon_data.dart::IconData"
+
+class "clash_log::war.dart::War" {
+  +State<StatefulWidget> createState()
+}
+
+"flutter::src::widgets::framework.dart::StatefulWidget" <|-- "clash_log::war.dart::War"
+
+class "clash_log::war.dart::_War" {
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::State" <|-- "clash_log::war.dart::_War"
+
+class "clash_log::war_class.dart::WarLog" {
+  +String result
+  +String endTime
+  +int teamSize
+  +int attacksPerMember
+  +String clanTag
+  +String clanName
+  +String clanBadgeUrl
+  +int clanLevel
+  +int clanAttack
+  +int clanStar
+  +double clanDestructionPercentage
+  +int clanExpEarned
+  +String oppTag
+  +String oppName
+  +String oppBadgeUrl
+  +int oppLevel
+  +int oppAttack
+  +int oppStar
+  +double oppDestructionPercentage
+  +int oppExpEarned
+}
+
+class "clash_log::war_class.dart::CurrentWar" {
+  +String state
+  +int teamSize
+  +int attacksPerMember
+  +String prepStartTime
+  +String startTime
+  +String endTime
+  +String clanTag
+  +String clanName
+  +String clanBadgeUrl
+  +int clanLevel
+  +int clanAttack
+  +int clanStar
+  +double clanDestructionPercentage
+  +List<MemberWar> members
+  +String oppTag
+  +String oppName
+  +String oppBadgeUrl
+  +int oppLevel
+  +int oppAttack
+  +int oppStar
+  +double oppDestructionPercentage
+}
+
+class "clash_log::war_class.dart::MemberWar" {
+  +String tag
+  +int order
+  +int duration
+}
+
+
+@enduml
