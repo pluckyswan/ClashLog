@@ -1,16 +1,7 @@
 # clash_log
 
-Clash of Clans API app.
+Clash of Clans companion app.
 
-## Getting Started
+Designed to view various clan information like clan status, members, and previous wars. 
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Utilizes free Clash of Clans API (https://developer.clashofclans.com/#/), which requires API Key. Please provide API Key found in loading.dart stored in token variable. 
